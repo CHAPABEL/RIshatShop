@@ -1,0 +1,320 @@
+/* Современный минимализм, пастельные тона */
+:root {
+  --bg: #f7f7fa;
+  --card: #fff;
+  --border: #e3e8f0;
+  --primary: #4b6cb7;
+  --accent: #c3cfe2;
+  --text: #222;
+  --radius: 6px;
+  --space: 24px;
+  --font: 'Inter', Arial, sans-serif;
+}
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+main.container {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  flex-shrink: 0;
+  background: #f7f8fa;
+  padding: 16px 0;
+  border-top: 1px solid #e6eaf3;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer .container {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  padding: 0 16px;
+}
+
+/* Main content area */
+main.container {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Footer styles */
+.footer {
+  flex-shrink: 0;
+  background: #f7f8fa;
+  padding: 16px 0;
+  border-top: 1px solid #e6eaf3;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer .container {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  padding: 0 16px;
+}
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 16px;
+}
+.cards-row, div[style*='display:flex'][style*='wrap'] {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-items: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .cards-row, div[style*='display:flex'][style*='wrap'] {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .cards-row, div[style*='display:flex'][style*='wrap'] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .cards-row, div[style*='display:flex'][style*='wrap'] {
+    justify-content: flex-start;
+  }
+  .card {
+    flex: 0 1 calc((100% - 64px) / 3);
+    max-width: 340px;
+    min-width: 280px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 899px) {
+  .card {
+    flex: 0 1 calc((100% - 32px) / 2);
+    max-width: 340px;
+    min-width: 200px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  display: block;
+}
+.card .button {
+  margin-top: auto;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(80,110,140,0.07);
+  border: 1px solid #e6eaf3;
+  padding: 22px;
+  margin-bottom: 24px;
+  transition: all 200ms cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-filter {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(80,110,140,0.07);
+  border: 1px solid #e6eaf3;
+  padding: 22px;
+  margin-bottom: 24px;
+  display: block;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card .button {
+  margin-top: auto;
+}
+.card:hover {
+  box-shadow: 0 4px 18px 0 rgba(80,120,200,0.11);
+  border: 1px solid #b3c6e6;
+}
+.button {
+  background: linear-gradient(90deg,#4b6cb7 0%,#223469 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 2px 6px 0 rgba(80,120,200,0.07);
+  font-weight: 500;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.button:hover, .button:focus {
+  transform: scale(1.05);
+  background: linear-gradient(90deg,#35518a 0%,#223059 100%);
+  color: #fff !important;
+  box-shadow: 0 4px 12px 0 rgba(80,120,200,0.13);
+  text-decoration: none !important;
+}
+.catalog-product-desc {
+  font-size: 0.92em;
+  color: #7a869a;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.catalog-filter-input {
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+  background: #fafdff;
+  padding: 0 13px;
+  font-size: 1em;
+  transition: all 200ms cubic-bezier(0.4,0,0.2,1);
+  margin-right: 0;
+  box-sizing: border-box;
+}
+.catalog-filter-input:focus {
+  border-color: #4b6cb7;
+  outline: none;
+  box-shadow: 0 0 0 2px #e3e8f0;
+}
+.catalog-filter-input::placeholder {
+  color: #b4bbcc;
+  opacity: 1;
+}
+.catalog-filter-input[type="number"] {
+  width: 100px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4b6cb7;
+  outline: none;
+  box-shadow: 0 0 0 2px #e3e8f0;
+}
+h1, h2, h3 {
+  color: #35518a;
+  margin-top: 0;
+  letter-spacing: -1px;
+}
+a {
+  color: #4b6cb7;
+  text-decoration: none !important;
+  transition: color 200ms cubic-bezier(0.4,0,0.2,1);
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: #222;
+  text-decoration: none !important;
+  outline: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fafdff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+thead {
+  background: #e3e8f0;
+}
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e3e8f0;
+  text-align: left;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background: #f0f6ff;
+  transition: background 200ms cubic-bezier(0.4,0,0.2,1);
+}
+.flash-success, .card-success {
+  background: #e6f7e6;
+  color: #1a7f1a;
+  border: 1px solid #d0eac8;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.flash-error, .card-error {
+  background: #ffeaea;
+  color: #b00;
+  border: 1px solid #f5cccc;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+::-webkit-input-placeholder { color: #b5bfcf; }
+::-moz-placeholder { color: #b5bfcf; }
+:-ms-input-placeholder { color: #b5bfcf; }
+::placeholder { color: #b5bfcf; }
+@media (max-width: 700px) {
+  .container {
+    padding: 10px 1vw;
+  }
+  .card {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  th, td {
+    padding: 7px 6px;
+    font-size: 0.97em;
+  }
+  .button {
+    padding: 8px 14px;
+    font-size: 0.98em;
+  }
+}
